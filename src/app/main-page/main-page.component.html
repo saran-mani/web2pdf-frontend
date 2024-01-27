@@ -1,0 +1,9 @@
+<div class="container">
+  <form (ngSubmit)="submitUrl()">
+    <div class="input-group">
+      <label for="url">URL</label>
+      <input type="text" id="url" name="url" [(ngModel)]="url"/>
+      <button type="submit">Download pdf</button>
+    </div>
+  </form>
+</div>
