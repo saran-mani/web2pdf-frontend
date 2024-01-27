@@ -18,20 +18,18 @@ import { WebtopdfService } from '../service/webtopdf.service';
 })
 export class MainPageComponent {
   generateWebToPdf: any;
-  url: string = '';
   constructor(private pdfService: WebtopdfService, fb: FormBuilder) {
     this.generateWebToPdf = fb.group({
       url: ['', [Validators.required]],
     });
   }
 
-  submitUrl() {
+  downloadPdf() {
     console.log(this.generateWebToPdf.value.url);
-    this.pdfService.generatePdf(this.url).subscribe({
+
+    this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
-        const blob = new Blob([res], { type: 'application/pdf' });
-        const url = window.URL.createObjectURL(blob);
-        window.open(url);
+        console.log(res);
         console.log('pdf generated');
       },
       error: (error) => {

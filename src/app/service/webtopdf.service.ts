@@ -10,7 +10,7 @@ export class WebtopdfService {
 
   constructor(private http:HttpClient) { }
 
-  generatePdf(url:string): Observable<any>{
+  generatePdf(url:any): Observable<ArrayBuffer>{
     return this.http.post<any>(`http://localhost:3000/generatepdf`,url)
   }
 }

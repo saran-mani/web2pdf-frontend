@@ -1,9 +1,9 @@
 <div class="container">
-  <form (ngSubmit)="submitUrl()">
+  <form [formGroup]="generateWebToPdf">
     <div class="input-group">
       <label for="url">URL</label>
-      <input type="text" id="url" name="url" [(ngModel)]="url"/>
-      <button type="submit">Download pdf</button>
+      <input type="text" id="url" name="url" formControlName="url"/>
+      <button type="submit" (click)="downloadPdf()">Download pdf</button>
     </div>
   </form>
 </div>
