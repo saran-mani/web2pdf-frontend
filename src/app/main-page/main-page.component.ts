@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { saveAs } from 'file-saver';
 import {
   FormBuilder,
   FormsModule,
@@ -29,6 +30,8 @@ export class MainPageComponent {
 
     this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
+        const blob = new Blob([res], { type: 'application/pdf' });
+        saveAs(blob, 'downloaded.pdf');
         console.log(res);
         console.log('pdf generated');
       },
