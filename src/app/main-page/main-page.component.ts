@@ -22,12 +22,13 @@ export class MainPageComponent {
   constructor(private pdfService: WebtopdfService, fb: FormBuilder) {
     this.generateWebToPdf = fb.group({
       url: ['', [Validators.required]],
+      orientation:['portrait',Validators.required],
+      pageSize:['letter',Validators.required]
     });
   }
 
   downloadPdf() {
-    console.log(this.generateWebToPdf.value.url);
-
+    console.log(this.generateWebToPdf.value);
     this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
         const blob = new Blob([res], { type: 'application/pdf' });
