@@ -8,6 +8,6 @@ export class WebtopdfService {
   constructor(private http:HttpClient) { }
 
   generatePdf(url:any){
-    return this.http.post("http://localhost:3000/generatepdf",url,{responseType:"arraybuffer"})
+    return this.http.post("https://web2pdf.onrender.com/generatepdf",url,{responseType:"arraybuffer"})
   }
 }
