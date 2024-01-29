@@ -34,7 +34,8 @@ export class MainPageComponent {
     this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
         const blob = new Blob([res], { type: 'application/pdf' });
-        saveAs(blob, 'downloaded.pdf');
+        const filename=`${this.generateWebToPdf.value.url}.pdf`
+        saveAs(blob, filename);
         console.log(res);
         this.isloading = false;
       },
