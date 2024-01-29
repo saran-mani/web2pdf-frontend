@@ -93,8 +93,11 @@
       </div>
     </form>
   </div>
-  @if (alertMessage) {
+  @if (alertMessage==="complete") {
   <p class="alertmsg">File downloaded check your downloads..</p>
+  }
+  @if (alertMessage==="failed") {
+  <p class="alertmsg">Something went wrong!!</p>
   }
     <a class="dev flex flex-row" href="https://github.com/saran-mani"
       >Saran codes <img src="assets/github.svg" alt=""

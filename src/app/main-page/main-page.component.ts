@@ -19,10 +19,10 @@ import { WebtopdfService } from '../service/webtopdf.service';
 export class MainPageComponent {
   generateWebToPdf: any;
   isloading: boolean = false;
-  alertMessage: boolean=false;
+  alertMessage: string="";
   constructor(private pdfService: WebtopdfService, fb: FormBuilder) {
     this.generateWebToPdf = fb.group({
-      url: ['', [Validators.required]],
+      url: ['https://en.wikipedia.org/wiki/Web_browser', [Validators.required]],
       orientation: ['portrait', Validators.required],
       pageSize: ['letter', Validators.required],
     });
@@ -30,7 +30,7 @@ export class MainPageComponent {
 
   downloadPdf() {
     this.isloading = true;
-    this.alertMessage=false
+    this.alertMessage=""
     this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
         const blob = new Blob([res], { type: 'application/pdf' });
@@ -40,10 +40,12 @@ export class MainPageComponent {
         this.isloading = false;
       },
       error: (error) => {
+        this.isloading = false;
+        this.alertMessage="failed"
         console.log(error);
       },
       complete: () => {
-        this.alertMessage=true
+        this.alertMessage="complete"
       },
     });
   }
