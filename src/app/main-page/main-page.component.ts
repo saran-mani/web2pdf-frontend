@@ -27,19 +27,16 @@ export class MainPageComponent {
   }
 
   downloadPdf() {
-    console.log(this.generateWebToPdf.value);
     this.pdfService.generatePdf(this.generateWebToPdf.value).subscribe({
       next: (res) => {
         const blob = new Blob([res], { type: 'application/pdf' });
         saveAs(blob, 'downloaded.pdf');
         console.log(res);
-        console.log('pdf generated');
       },
       error: (error) => {
         console.log(error);
       },
       complete: () => {
-        console.log('webtopdf process completed');
       },
     });
   }
