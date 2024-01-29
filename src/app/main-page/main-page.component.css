@@ -15,6 +15,13 @@ p,.url{
 h1{
     font-family: "Varela", sans-serif;
 }
+.alertmsg{
+    font-family: "Varela", sans-serif;
+    font-style: italic;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+}
 .dev{
     font-family: "Varela", sans-serif;
     font-style: italic;

@@ -1,5 +1,5 @@
 <div class="bg-mlight min-h-screen flex flex-col items-center">
-  <h1 class="text-5xl text-light mt-8"> WEB2PDF </h1>
+  <h1 class="text-5xl text-light mt-8">WEB2PDF</h1>
   <div
     class="bg-primary p-10 mt-10 rounded-lg shadow w-80 md:w-3/4 mx-auto lg:w-1/2"
   >
@@ -8,7 +8,14 @@
         <div class="input-group flex flex-col">
           <div>
             <label for="url" class="font-bold url">URL</label>
-            <input type="text" id="url" name="url" formControlName="url" class="w-full rounded-lg p-1"/>
+            <input
+              type="text"
+              id="url"
+              name="url"
+              formControlName="url"
+              class="w-full rounded-lg p-1"
+              required
+            />
           </div>
         </div>
         <div class="input-group flex flex-col">
@@ -75,14 +82,22 @@
           <button
             type="submit"
             (click)="downloadPdf()"
-            class="bg-mlight text-light p-2 rounded-lg"
+            class="bg-mlight text-light p-3 rounded-lg flex flex-row"
+            [disabled]="isloading || !generateWebToPdf.valid"
           >
-            Download PDF
+            @if (!isloading) { Download PDF } @if(isloading) {
+            <img src="assets/loader.svg" class="pr-1" alt="" />Processing }
           </button>
         </div>
       </div>
     </form>
   </div>
-  <h2 class="dev">Saran codes</h2>
-
+  @if (alertMessage) {
+  <p class="alertmsg">File downloaded check your downloads..</p>
+  }
+  <div>
+    <a class="dev flex flex-row" href="https://github.com/saran-mani"
+      >Saran codes <img src="assets/github.svg" alt=""
+    /></a>
+  </div>
 </div>
