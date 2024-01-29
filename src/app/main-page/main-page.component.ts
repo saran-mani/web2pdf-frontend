@@ -33,9 +33,14 @@ export class MainPageComponent {
         const link = document.createElement('a');
         link.href = url;
         link.download = 'report.pdf';
+        link.style.display = 'none';
+        document.body.appendChild(link);
         link.click();
-        window.URL.revokeObjectURL(url);
+        document.body.removeChild(link);
+
+        // Open the downloaded PDF in a new browser tab
         window.open(url, '_blank');
+
         console.log(res);
       },
       error: (error) => {
