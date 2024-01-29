@@ -1,77 +1,88 @@
-<div class="bg-primary min-h-screen flex flex-col items-center">
+<div class="bg-mlight min-h-screen flex flex-col items-center">
+  <h1 class="text-5xl text-light mt-8"> WEB2PDF </h1>
   <div
-    class="bg-light p-10 mt-10 rounded-lg shadow w-80 md:w-3/4 mx-auto lg:w-1/2"
+    class="bg-primary p-10 mt-10 rounded-lg shadow w-80 md:w-3/4 mx-auto lg:w-1/2"
   >
     <form [formGroup]="generateWebToPdf">
       <div class="flex flex-col mx-auto">
-        <div class="input-group">
-          <label for="url">URL</label>
-          <input type="text" id="url" name="url" formControlName="url" />
+        <div class="input-group flex flex-col">
+          <div>
+            <label for="url" class="font-bold url">URL</label>
+            <input type="text" id="url" name="url" formControlName="url" class="w-full rounded-lg p-1"/>
+          </div>
         </div>
-        <div class="input-group flex flex-row align-middle">
-          <p>Page Orientation:</p>
-          <input
-            type="radio"
-            id="portrait"
-            name="orientation"
-            value="portrait"
-            formControlName="orientation"
-            checked
-          />
-          <label for="orientation">Portrait</label>
-          <input
-            type="radio"
-            id="landscape"
-            name="orientation"
-            value="landscape"
-            formControlName="orientation"
-          />
-          <label for="orientation">Landscape</label>
+        <div class="input-group flex flex-col">
+          <div>
+            <p>Page Orientation:</p>
+            <input
+              type="radio"
+              id="portrait"
+              name="orientation"
+              value="portrait"
+              formControlName="orientation"
+              checked
+            />
+            <label for="orientation">Portrait</label>
+            <input
+              type="radio"
+              id="landscape"
+              name="orientation"
+              value="landscape"
+              formControlName="orientation"
+            />
+            <label for="orientation">Landscape</label>
+          </div>
         </div>
-        <div class="input-group flex flex-row align-middle">
+        <div class="input-group flex flex-col">
           <p>Page Size:</p>
-          <input
-            type="radio"
-            id="letter"
-            name="pageSize"
-            value="letter"
-            checked
-            formControlName="pageSize"
-          />
-          <label for="pageSize">Letter</label>
-          <input
-            type="radio"
-            id="legal"
-            name="pageSize"
-            value="legal"
-            formControlName="pageSize"
-          />
-          <label for="pageSize">Legal</label>
-          <input
-            type="radio"
-            id="A4"
-            name="pageSize"
-            value="A4"
-            formControlName="pageSize"
-          />
-          <label for="pageSize">A4</label>
-          <input
-            type="radio"
-            id="A5"
-            name="pageSize"
-            value="A5"
-            formControlName="pageSize"
-          />
-          <label for="pageSize">A5</label>
+          <div>
+            <input
+              type="radio"
+              id="letter"
+              name="pageSize"
+              value="letter"
+              checked
+              formControlName="pageSize"
+            />
+            <label for="pageSize">Letter</label>
+            <input
+              type="radio"
+              id="legal"
+              name="pageSize"
+              value="legal"
+              formControlName="pageSize"
+            />
+            <label for="pageSize">Legal</label>
+            <input
+              type="radio"
+              id="A4"
+              name="pageSize"
+              value="A4"
+              formControlName="pageSize"
+            />
+            <label for="pageSize">A4</label>
+            <input
+              type="radio"
+              id="A5"
+              name="pageSize"
+              value="A5"
+              formControlName="pageSize"
+            />
+            <label for="pageSize">A5</label>
+          </div>
         </div>
-        <button
-          type="submit"
-          (click)="downloadPdf()"
-          class="bg-primary text-light"
-        >
-          Download pdf
-        </button>
+        <div class="flex mx-auto mt-5">
+          <button
+            type="submit"
+            (click)="downloadPdf()"
+            class="bg-mlight text-light p-2 rounded-lg"
+          >
+            Download PDF
+          </button>
+        </div>
       </div>
     </form>
   </div>
+  <h2 class="dev">Saran codes</h2>
+
 </div>

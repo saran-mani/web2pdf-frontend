@@ -1,0 +1,25 @@
+p,label,button{
+    font-family: "Varela Round", sans-serif;
+}
+label{
+    font-size: 14px;
+    padding: 5px;
+    color: white;
+}
+p,.url{
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+h1{
+    font-family: "Varela", sans-serif;
+}
+.dev{
+    font-family: "Varela", sans-serif;
+    font-style: italic;
+    position:absolute;
+    bottom: 0;
+    color: white;
+    font-size: larger;
+}

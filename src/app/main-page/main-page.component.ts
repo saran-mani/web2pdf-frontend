@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { saveAs } from 'file-saver';
 import {
@@ -12,7 +11,7 @@ import { WebtopdfService } from '../service/webtopdf.service';
 @Component({
   selector: 'main-page',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [FormsModule,ReactiveFormsModule],
   providers: [WebtopdfService],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
@@ -22,8 +21,8 @@ export class MainPageComponent {
   constructor(private pdfService: WebtopdfService, fb: FormBuilder) {
     this.generateWebToPdf = fb.group({
       url: ['', [Validators.required]],
-      orientation:['portrait',Validators.required],
-      pageSize:['letter',Validators.required]
+      orientation: ['portrait', Validators.required],
+      pageSize: ['letter', Validators.required],
     });
   }
 
