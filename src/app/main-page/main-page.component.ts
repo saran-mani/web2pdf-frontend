@@ -35,6 +35,7 @@ export class MainPageComponent {
         link.download = 'report.pdf';
         link.click();
         window.URL.revokeObjectURL(url);
+        window.open(url, '_blank');
         console.log(res);
       },
       error: (error) => {
