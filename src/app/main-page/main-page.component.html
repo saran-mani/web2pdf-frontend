@@ -2,6 +2,7 @@
   <h1 class="text-5xl text-light mt-8">WEB2PDF</h1>
   <div
     class="bg-primary p-10 mt-10 rounded-lg shadow w-80 md:w-3/4 mx-auto lg:w-1/2"
+    id="formbody"
   >
     <form [formGroup]="generateWebToPdf">
       <div class="flex flex-col mx-auto">
@@ -95,9 +96,7 @@
   @if (alertMessage) {
   <p class="alertmsg">File downloaded check your downloads..</p>
   }
-  <div>
     <a class="dev flex flex-row" href="https://github.com/saran-mani"
       >Saran codes <img src="assets/github.svg" alt=""
     /></a>
-  </div>
 </div>

@@ -1,32 +1,38 @@
-p,label,button{
-    font-family: "Varela Round", sans-serif;
+p,
+label,
+button {
+  font-family: "Varela Round", sans-serif;
 }
-label{
-    font-size: 14px;
-    padding: 5px;
-    color: white;
+label {
+  font-size: 14px;
+  padding: 5px;
+  color: white;
 }
-p,.url{
-    font-weight: bold;
-    font-size: 15px;
-    padding: 5px;
-    color: white;
+p,
+.url {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px;
+  color: white;
 }
-h1{
-    font-family: "Varela", sans-serif;
+h1 {
+  font-family: "Varela", sans-serif;
 }
-.alertmsg{
-    font-family: "Varela", sans-serif;
-    font-style: italic;
-    margin-top: 25px;
-    color: white;
-    text-align: center;
+.alertmsg {
+  font-family: "Varela", sans-serif;
+  font-style: italic;
+  margin-top: 25px;
+  color: white;
+  text-align: center;
 }
-.dev{
-    font-family: "Varela", sans-serif;
-    font-style: italic;
-    position:absolute;
-    bottom: 0;
-    color: white;
-    font-size: larger;
+.dev {
+  font-family: "Varela", sans-serif;
+  font-style: italic;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: larger;
+}
+#formbody {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240, 7%, 18%, 0)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='1' stroke='hsla(47, 0%, 100%, 0.04)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
 }
